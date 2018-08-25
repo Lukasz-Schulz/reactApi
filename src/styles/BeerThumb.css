@@ -1,0 +1,11 @@
+.card img {
+  height: 150px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumb-title {
+  height: 100%;
+}

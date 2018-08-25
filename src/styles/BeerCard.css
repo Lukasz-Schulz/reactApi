@@ -1,0 +1,13 @@
+.card {
+  height: 100%;
+}
+
+.card-title {
+  /* height: 4rem; */
+  text-align: end;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}

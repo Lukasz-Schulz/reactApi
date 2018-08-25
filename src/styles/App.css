@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+body {
+
+  background-color: #f5f5dc;
+}
+.card {
+  height: 100%;
+}
+
+a:hover,
+a:visited,
+a {
+  text-decoration: none;
+  color: #393939;
+}
