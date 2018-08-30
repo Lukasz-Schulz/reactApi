@@ -1,17 +1,37 @@
+
 .App {
   text-align: center;
 }
-body {
 
-  background-color: #f5f5dc;
+body {
+    background: #0F2027;
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);font-family: 'Titillium Web', sans-serif;
+
 }
 .card {
   height: 100%;
+}
+
+h1,
+h4,
+h6 {
+  color:#FDC830;
 }
 
 a:hover,
 a:visited,
 a {
   text-decoration: none;
-  color: #393939;
+    color: #0F2027;
+}
+
+.theme-color-dark {
+  color: #2C5364;
+}
+
+ul {
+  list-style-image: url("../Images/beer-icon.png");
+  padding-left: 2rem;
+  color: #353535;
 }

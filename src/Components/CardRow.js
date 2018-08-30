@@ -6,7 +6,7 @@ class CardRow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stopFetching: () => {},
+      stopFetching: () => { },
       isNoMoreToLoad: false,
       pageNumber: 1,
       isLoaded: false,
@@ -17,7 +17,7 @@ class CardRow extends Component {
   componentDidMount() {
     fetch(
       `https://api.punkapi.com/v2/beers?page=${
-        this.props.pageNumber
+      this.props.pageNumber
       }&per_page=4`
     )
       .then(response => response.json())
@@ -27,7 +27,6 @@ class CardRow extends Component {
             isLoaded: true,
             items: json
           });
-          console.log(json.length);
         } else {
           this.setState({
             isNoMoreToLoad: true
@@ -41,7 +40,7 @@ class CardRow extends Component {
     let { isLoaded, isNoMoreToLoad } = this.state;
 
     if (isNoMoreToLoad) {
-      return <div className="mx-auto">There is no more to load!</div>;
+      return <h4 className="text-center mx-auto">There is no more to load!</h4>;
     } else if (!isLoaded) {
       return (
         <div className="mx-auto">

@@ -1,5 +1,6 @@
-.card img {
-  height: 150px;
+.thumb-image {
+  height: 10vh;
+  min-height: 5rem;
   width: auto;
   display: block;
   margin-left: auto;

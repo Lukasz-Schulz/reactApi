@@ -1,6 +1,10 @@
 .modal-image {
-  height: 200px;
+  min-height: 15rem;
+  height: 25vh;
+  max-height: 50vh;
   width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .beer-modal {
@@ -13,8 +17,9 @@
   z-index: 2;
   background-color: #fff;
   padding: 1rem;
-  border: 2px #777 solid;
   border-radius: 0.3rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: auto;
 }
 
 .modal-background {
@@ -25,6 +30,10 @@
   z-index: 2;
   position: fixed;
   background-color: rgba(99, 99, 99, 0.5);
+}
+
+h5 {
+  color:#FDC830;
 }
 
 @media screen and (max-width: 768px) {

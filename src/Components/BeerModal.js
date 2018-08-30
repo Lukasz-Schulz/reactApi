@@ -3,18 +3,31 @@ import "../styles/BeerModal.css";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import RowOfThumbnails from "./RowOfThumbnails";
+import FoodPairing from "./FoodPairing";
 
 class BeerModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoaded: false,
-      items: []
+      items: [],
+      id: "7",
     };
+  }
+
+  contentCheck(input) {
+    if (!input) {
+      return "n/a";
+    } else {
+      return input;
+    }
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
+    this.setState({
+      id: this.props.match.params,
+    })
 
     fetch(`https://api.punkapi.com/v2/beers?ids=${id}`)
       .then(response => response.json())
@@ -25,6 +38,7 @@ class BeerModal extends Component {
         });
       });
   }
+
   render() {
     let { isLoaded } = this.state;
 
@@ -50,21 +64,27 @@ class BeerModal extends Component {
               {this.state.items.map(item => (
                 <div key={item.id}>
                   <h2 className="text-center mb-3">{item.name}</h2>
-                  <h4 className="ml-4">{item.tagline}</h4>
-                  <div className="row">
-                    <img
-                      className="col-4 d-block mx-auto modal-image"
-                      src={item.image_url}
-                      alt="beer"
-                    />
-                    <div className="col-8">
-                      <p>Tips: {item.brewers_tips}</p>
-                      <p>IBU: {item.ibu}</p>
-                      <p>ABV: {item.abv}</p>
-                      <p>EBC: {item.ebc}</p>
+                  <h4 className="ml-4 pb-4">{item.tagline}</h4>
+                  <div className="row mb-sm-4">
+                    <div className="col-sm-4">
+                      <div className="">
+                        <img className="modal-image d-block img-fluid img-responsive"
+                          src={item.image_url}
+                          alt="beer"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-sm-8">
+                      <p><span className="theme-color-dark font-weight-bold"> IBU:</span>{" "}{this.contentCheck(item.ibu)}</p>
+                      <p><span className="theme-color-dark font-weight-bold">ABV:</span>{" "}{this.contentCheck(item.abv)}</p>
+                      <p><span className="theme-color-dark font-weight-bold">EBC:</span>{" "}{this.contentCheck(item.ebc)}</p>
+                      <p>
+                        {" "}{item.description}
+                      </p>
+                      <FoodPairing pairings={item.food_pairing} />
                     </div>
                   </div>
-                  <p>You may also like:</p>
+                  <h5 className="p-2">Similar stuff:</h5>
                   <RowOfThumbnails motherBeer={item} />
                 </div>
               ))}

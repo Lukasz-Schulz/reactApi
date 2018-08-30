@@ -12,22 +12,20 @@ class BeerThumb extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="card">
-          <div className="row">
-            <div className="col">
-              <img
-                src={this.props.beer.image_url}
-                alt="beer"
-                className="d-block my-auto"
-              />
-            </div>
+      <div className="card" >
+        <div className="row">
+          <div className="col p-1">
+            <img
+              src={this.props.beer.image_url}
+              alt="beer"
+              className="d-block my-auto thumb-image"
+            />
           </div>
-          <div className="row">
-            <div className="col">
-              <div className="card-title text-center thumb-title mb-auto">
-                {this.props.beer.name}
-              </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <div className="card-title text-center thumb-title mb-auto theme-color-dark font-weight-bold">
+              {this.props.beer.name}
             </div>
           </div>
         </div>

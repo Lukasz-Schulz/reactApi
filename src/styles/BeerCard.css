@@ -3,6 +3,11 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+h4 {
+  font-weight: 600;
+  color: #FDC830;
+}
+
 .card:hover {
   position: relative;
   top: -0.5rem;
@@ -19,7 +24,18 @@
   padding: auto;
 }
 
-img {
-  height: auto;
-  width: 100%;
+img.card-image {
+  height: 12rem;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .card:hover {
+    position: relative;
+    top: -0.5rem;
+    left: 0;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+  }
 }
