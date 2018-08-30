@@ -1,10 +1,22 @@
 .card {
   height: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.card-title {
-  /* height: 4rem; */
+.card:hover {
+  position: relative;
+  top: -0.5rem;
+  left: -0.25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.beer-card-title {
+  min-height: 4rem;
+  line-height: 2rem;
   text-align: end;
+  padding-top: auto;
+  display: block;
+  padding: auto;
 }
 
 img {

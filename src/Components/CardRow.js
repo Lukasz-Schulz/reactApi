@@ -50,14 +50,12 @@ class CardRow extends Component {
       );
     } else {
       return (
-        <div className="container">
-          <div className="row">
-            {this.state.items.map(item => (
-              <div className="col-lg-3 my-3" key={item.id}>
-                <BeerCard beer={item} />
-              </div>
-            ))}
-          </div>
+        <div className="row">
+          {this.state.items.map(item => (
+            <div className="col-lg-3 my-3" key={item.id}>
+              <BeerCard beer={item} />
+            </div>
+          ))}
         </div>
       );
     }

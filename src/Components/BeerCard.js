@@ -16,10 +16,10 @@ class BeerCard extends Component {
     return (
       <Link to={link}>
         <div className="container p-0 h-100 mb-4 mb-md-0">
-          <div className="card">
-            <h2 className="card-title text-center my-2">
+          <div className="card mx-2 mx-md-0">
+            <h4 className="card-title beer-card-title text-center mt-2 mb-auto">
               {this.props.beer.name}
-            </h2>
+            </h4>
             <hr className="m-0" />
             <div className="card-body row">
               <div className="col-5">
