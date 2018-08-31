@@ -11,7 +11,7 @@ class RowOfThumbnails extends Component {
       similarIbu: [],
       similarAbv: [],
       similarEbc: [],
-      isLoaded: false
+      isLoaded: false,
     };
   }
 
@@ -67,6 +67,10 @@ class RowOfThumbnails extends Component {
     this.getSimilarEbc(this.props.motherBeer.ebc);
   }
 
+  redirect = () => {
+    this.props.handleClick();
+  }
+
   render() {
     if (this.state.similarIbu.length === 0 && this.state.similarAbv.length === 0 && this.state.similarEbc.length === 0) {
       return (
@@ -79,17 +83,17 @@ class RowOfThumbnails extends Component {
         <div className="row">
           {this.state.similarAbv.map(item => (
             <div className="col-4" key={item.id}>
-              <BeerThumb beer={item} />
+              <BeerThumb beer={item} handleClick={() => { this.redirect() }} />
             </div>
           ))}
           {this.state.similarIbu.map(item => (
             <div className="col-4" key={item.id}>
-              <BeerThumb beer={item} />
+              <BeerThumb beer={item} handleClick={() => { this.redirect() }} />
             </div>
           ))}
           {this.state.similarEbc.map(item => (
             <div className="col-4" key={item.id}>
-              <BeerThumb beer={item} />
+              <BeerThumb beer={item} handleClick={() => { this.redirect() }} />
             </div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../styles/BeerModal.css";
 import Loader from "./Loader";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import RowOfThumbnails from "./RowOfThumbnails";
 import FoodPairing from "./FoodPairing";
 
@@ -11,7 +11,7 @@ class BeerModal extends Component {
     this.state = {
       isLoaded: false,
       items: [],
-      id: "7",
+      id: "",
     };
   }
 
@@ -37,6 +37,13 @@ class BeerModal extends Component {
           items: json
         });
       });
+  }
+
+  redirect = () => {
+    console.log("DOSZŁO DO MODALA");
+    this.setState({
+      id: 11,
+    });
   }
 
   render() {
@@ -85,7 +92,7 @@ class BeerModal extends Component {
                     </div>
                   </div>
                   <h5 className="p-2">Similar stuff:</h5>
-                  <RowOfThumbnails motherBeer={item} />
+                  <RowOfThumbnails motherBeer={item} handleClick={this.redirect} />
                 </div>
               ))}
             </div>

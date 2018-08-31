@@ -31,7 +31,6 @@ class CardRow extends Component {
           this.setState({
             isNoMoreToLoad: true
           });
-          this.props.stopFetching();
         }
       });
   }

@@ -6,13 +6,18 @@ class BeerThumb extends Component {
     super(props);
 
     this.state = {
-      beer: []
+      beer: [],
     };
+  }
+
+  redirect = (e) => {
+    e.preventDefault();
+    this.props.handleClick();
   }
 
   render() {
     return (
-      <div className="card" >
+      <div className="card" onClick={this.redirect}>
         <div className="row">
           <div className="col p-1">
             <img
